@@ -1,0 +1,109 @@
+if((Sid>0))
+	return true;
+else
+	JOptionPane.showMessageDialog(new JDialog(),"Invalid Id...");
+if(Smarks>0&&Smarks<100)
+	return true;
+else
+	JOptionPane.showMessageDialog(new JDialog(),"Invalid Marks...");
+if((i==0)||(Sname.length()>1))
+	return true;
+else
+	JOptionPane.showMessageDialog(new JDialog(),"Invalid Name...");
+
+// old one
+/*if( (Sid>0) && (Smarks>0&&Smarks<100) && (i==0) && (Sname.length()>1))
+{
+new Music().music1();
+
+DbHandler db = new DbHandler();
+db.addStudent( Sid,  Sname, Smarks);
+txtSid.setText("");
+txtSname.setText("");
+txtSmarks.setText("");
+txtSid.requestFocus();
+
+}*/
+
+/*else
+{
+new Music().music2();
+JOptionPane.showMessageDialog(new JDialog(),"Invalid inputs...");
+txtSid.setText("");
+txtSname.setText("");
+txtSmarks.setText("");
+txtSid.requestFocus();
+}*/
+
+}
+
+catch(NumberFormatException nfe){
+new Music().music2();
+JOptionPane.showMessageDialog(new JDialog(),"Plz Enter Proper Inputs...");
+txtSid.setText("");
+txtSname.setText("");
+txtSmarks.setText("");
+txtSid.requestFocus();
+}
+//
+for(a=0;a<Sname.length();j++){
+	char ch = Sname.charAt(j);
+	if(j==0){
+		if(Character.isLetter(ch))
+			i=0;
+		else{
+			i=1;
+			break;
+		}
+	}
+	if(j>=1){	
+		if(Character.isLetter(ch)||Character.isWhitespace(ch))
+			i=0;
+		else{
+			i=1;
+			break;
+		}
+	}
+
+}
+//
+int j,i=1;
+for(j=0;j<Sname.length();j++){
+	char ch = Sname.charAt(j);
+	if(j==0){
+		if(Character.isLetter(ch))
+			i=0;
+		else{
+			i=1;
+			break;
+		}
+	}
+	if(j>=1){	
+		if(Character.isLetter(ch)||Character.isWhitespace(ch))
+			i=0;
+		else{
+			i=1;
+			break;
+		}
+	}
+}
+if( (Sid>0) && (Smarks>0&&Smarks<100) && (i==0) && (Sname.length()>1))
+{
+new Music().music1();
+
+DbHandler db = new DbHandler();
+db.updateStudent( Sid,  Sname, Smarks);
+txtSid.setText("");
+txtSname.setText("");
+txtSmarks.setText("");
+txtSid.requestFocus();
+}
+else
+{
+new Music().music2();
+JOptionPane.showMessageDialog(new JDialog(),"Invalid inputs...");
+txtSid.setText("");
+txtSname.setText("");
+txtSmarks.setText("");
+txtSid.requestFocus();
+}
